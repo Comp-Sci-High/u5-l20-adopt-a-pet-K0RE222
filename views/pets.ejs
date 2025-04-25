@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adopt a Pet 🏡🐾</title>
+  <link rel="stylesheet" href="/pets.css">
+  <script src="/petScript.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>🐾 Adopt a Pet 🐾</h1>
+    <p>Give a furry friend a forever home!</p>
+  </header>
+
+
+  <main class="card-container">
+    <% for (let i = 0; i < pets.length; i++) { %>
+      <div class="pet-card">
+        <div class="pet-emoji"><%= pets[i].emoji %></div>
+        <h2><%= pets[i].name %></h2>
+        <p>Age: <%= pets[i].age %></p>
+        <% if (pets[i].adopted === true) { %>
+          <p>Status: <span class="status available">Adopted 💖</span></p>
+        <% } else { %>
+          <p>Status: <span class="status adopted">Available</span></p>
+        <% } %>
+        <button>Delete</button>
+      </div>
+    <% } %>
+  </main>
+
+
+</body>
+</html>
